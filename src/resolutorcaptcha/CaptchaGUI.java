@@ -9,5 +9,8 @@ package resolutorcaptcha;
  * @author Administrador
  */
 public class CaptchaGUI {
+    // constructor por defecto
+    public CaptchaGUI(){
     
+    }
 }
