@@ -11,6 +11,7 @@ package resolutorcaptcha;
 public class CaptchaGUI {
     // constructor por defecto
     public CaptchaGUI(){
-    
+        // construyecdo el CaptchaGUI
+        System.out.println("Construllendo el GUI Captcha.. ");
     }
 }

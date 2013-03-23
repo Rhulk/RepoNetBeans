@@ -15,5 +15,6 @@ public class ResolutorCaptcha {
      */
     public static void main(String[] args) {
         // Cass principal de gestion.
+        CaptchaGUI gui = new CaptchaGUI();
     }
 }
