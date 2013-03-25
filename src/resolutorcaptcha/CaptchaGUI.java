@@ -18,6 +18,7 @@ import javax.swing.JTextField;
  * @author Administrador
  */
 public class CaptchaGUI extends JFrame {
+   Resolutor resolutor = new Resolutor(this);
     // separacion top
     JPanel filaTop = new JPanel();
     // configurar fila 1
@@ -40,6 +41,12 @@ public class CaptchaGUI extends JFrame {
         setLayout(new GridLayout(4,1,10,10)); // mas simple
         add(filaTop);
         // hasta aqui la confi del frame principal
+        
+        // añadimos los listener para los eventos de los botones
+        iniciar.addActionListener(resolutor);
+        parar.addActionListener(resolutor);
+        
+        // configuracion de los JPanel
         fila1.setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
         fila1.add(imagen);
         add(fila1);
