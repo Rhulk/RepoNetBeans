@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 public class CaptchaGUI extends JFrame {
    Resolutor resolutor = new Resolutor(this); // vinculamos con la clase Resolutor
     // separacion top
-    JPanel filaTop = new JPanel();
+//    JPanel filaTop = new JPanel();
     // configurar fila 1
     JPanel fila1 = new JPanel();
     JLabel etiqueta_Imagen = new JLabel();//Etiqueta donde se mostrara la imagen
@@ -32,11 +32,11 @@ public class CaptchaGUI extends JFrame {
         JPanel fila4 = new JPanel();
     // constructor por defecto
     public CaptchaGUI(){
-        super("Resolutor Captcha.");
+        super("Resolutor Captcha Version Beta.");
         setSize(750,370); // tamaño inicial de la ventana
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(5,1,10,10)); // mas simple
-        add(filaTop);
+        setLayout(new GridLayout(4,1,10,10)); // mas simple
+//        add(filaTop);
         // hasta aqui la confi del frame principal
         
         // añadimos los listener para los eventos de los botones
@@ -47,6 +47,7 @@ public class CaptchaGUI extends JFrame {
         // configuracion de los JPanel
         fila1.setLayout(new FlowLayout(FlowLayout.CENTER,10,10));
         fila1.add(etiqueta_Imagen);
+        etiqueta_Imagen.setBounds(0, 0, 400, 400);
         add(fila1);
         
         fila2.setLayout(new FlowLayout(FlowLayout.CENTER,20,20));
