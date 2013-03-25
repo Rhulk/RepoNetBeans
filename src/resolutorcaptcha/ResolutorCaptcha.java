@@ -14,7 +14,7 @@ public class ResolutorCaptcha {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Cass principal de gestion.
+        // Class principal de gestion.
         CaptchaGUI gui = new CaptchaGUI();
     }
 }
