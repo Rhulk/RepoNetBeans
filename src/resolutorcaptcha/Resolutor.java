@@ -20,17 +20,20 @@ import javax.swing.ImageIcon;
  * @author Enrique Carvajal 25/03/2013
  */
 public class Resolutor  implements ItemListener, ActionListener, Runnable{
-    CaptchaGUI gui;
+//    CaptchaGUI gui;
+    GuiCaptcha gui;
     Thread conectando;
     private Socket sk;
     private int puerto=5000;
     private DataOutputStream dos;
     private DataInputStream dis;
     private ObjectInputStream entrada_imagen;
+    
 //    private JLabel etiqueta_Imagen_Original;//Etiqueta donde se mostrara la imagen
 
-    public Resolutor(CaptchaGUI in){
+    public Resolutor(GuiCaptcha in){
         gui =in;        
+        gui.parar.setEnabled(false);
     }
 
     @Override
@@ -43,6 +46,10 @@ public class Resolutor  implements ItemListener, ActionListener, Runnable{
 //            System.out.println("esperando respuesta");
             System.out.println(dis.readUTF());  // El server nos devuelve el foco. Para recibir la imagen.
             obtenerMostrarImagen(); // leemos la imagen.
+            gui.enviar.setEnabled(true);
+            gui.respuesta.setEnabled(true);
+            gui.respuesta.setEditable(true);
+            
             System.out.println("recibida");            
         } catch (UnknownHostException ex) {
             Logger.getLogger(Resolutor.class.getName()).log(Level.SEVERE, null, ex);
@@ -55,6 +62,8 @@ public class Resolutor  implements ItemListener, ActionListener, Runnable{
         System.out.println("conectar");
         conectando = new Thread(this);
         gui.iniciar.setEnabled(false);
+        gui.enviar.setEnabled(false);
+        gui.respuesta.setEditable(false);
         gui.parar.setEnabled(true);
         conectando.start();
     }
