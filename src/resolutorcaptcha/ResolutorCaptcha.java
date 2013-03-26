@@ -15,6 +15,8 @@ public class ResolutorCaptcha {
      */
     public static void main(String[] args) {
         // Class principal de gestion.
-        CaptchaGUI gui = new CaptchaGUI();
+//        CaptchaGUI gui = new CaptchaGUI();
+        GuiCaptcha gui = new GuiCaptcha();
+        gui.main(args);
     }
 }
