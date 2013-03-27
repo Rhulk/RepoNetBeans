@@ -33,7 +33,6 @@ public class Resolutor  implements ItemListener, ActionListener, Runnable{
 
     public Resolutor(GuiCaptcha in){
         gui =in;        
-        gui.parar.setEnabled(false);
     }
 
     @Override
@@ -132,7 +131,7 @@ public class Resolutor  implements ItemListener, ActionListener, Runnable{
     public void esperarCaptcha() throws IOException{
         BufferedImage esperar= ImageIO.read(new File("C:\\Documents and Settings\\Administrador\\Mis documentos\\NetBeansProjects\\ResolutorCaptcha\\src\\resolutorcaptcha\\esperandoCaptcha.jpg"));
         ImageIcon icono=new ImageIcon(esperar);
-        gui.etiqueta_Imagen.setIcon(icono);
+        gui.etiqueta_Imagen.setIcon(icono);     
     }
     
 }
